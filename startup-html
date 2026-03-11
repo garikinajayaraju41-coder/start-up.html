@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI - Future of Productivity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-bg {
+            background: radial-gradient(circle at top right, #1e1b4b, #020617);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #60a5fa !important;
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
+        }
+
+        .error-border {
+            border-color: #ef4444 !important;
+        }
+
+        .error-text {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100">
+
+    <!-- Header / Navigation -->
+    <header class="fixed w-full top-0 z-50 glass">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-layer-group text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">NEXUS</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#features" class="hover:text-blue-400 transition-colors">Features</a>
+                    <a href="#testimonials" class="hover:text-blue-400 transition-colors">Testimonials</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors">Apply</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full transition-all">Get Started</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMenu()" class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 w-full glass py-6 px-4 flex flex-col space-y-4">
+            <a href="#features" onclick="toggleMenu()" class="text-lg">Features</a>
+            <a href="#testimonials" onclick="toggleMenu()" class="text-lg">Testimonials</a>
+            <a href="#contact" onclick="toggleMenu()" class="text-lg">Apply</a>
+            <button class="bg-blue-600 w-full py-3 rounded-xl font-bold">Sign Up Free</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-blue-400 uppercase bg-blue-400/10 rounded-full">
+                Now in Private Beta
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Synthesize your <span class="text-gradient">workflow</span> with AI intelligence.
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Nexus connects all your tools, documents, and conversations into a single intuitive brain. Stop searching, start doing.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-white text-black text-center font-bold rounded-xl hover:bg-gray-200 transition-all">
+                    Join the Team
+                </a>
+                <button class="px-8 py-4 glass text-white font-bold rounded-xl hover:bg-white/10 transition-all">
+                    Watch Demo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Built for Modern Teams</h2>
+                <p class="text-gray-400">Everything you need to scale your output without scaling your stress.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl hover:border-blue-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500 transition-colors">
+                        <i class="fas fa-bolt text-blue-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-time Sync</h3>
+                    <p class="text-gray-400 leading-relaxed">Instantly update data across 50+ integrations. Your team is always on the same page.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl hover:border-purple-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500 transition-colors">
+                        <i class="fas fa-brain text-purple-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Neural Search</h3>
+                    <p class="text-gray-400 leading-relaxed">Ask questions in plain English. Nexus finds answers buried in PDFs, Slack, or Notion.</p>
+                </div>
+                <div class="glass p-8 rounded-2xl hover:border-emerald-500/50 transition-all group">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500 transition-colors">
+                        <i class="fas fa-shield-halved text-emerald-400 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
+                    <p class="text-gray-400 leading-relaxed">Bank-grade encryption and SOC2 compliance. Your data never leaves your private cloud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Job Application Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Help us build the future</h2>
+                <p class="text-gray-400">We're looking for visionary engineers and designers. Send us a message.</p>
+            </div>
+
+            <form id="nexusForm" class="glass p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden" novalidate>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <!-- Name Field -->
+                    <div class="flex flex-col">
+                        <label for="name" class="text-sm font-semibold mb-2 text-gray-300">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" 
+                            class="glass bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600">
+                        <span id="nameError" class="error-text">Please enter your full name.</span>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="flex flex-col">
+                        <label for="email" class="text-sm font-semibold mb-2 text-gray-300">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com"
+                            class="glass bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600">
+                        <span id="emailError" class="error-text">Please enter a valid email address.</span>
+                    </div>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="flex flex-col mb-6">
+                    <label for="phone" class="text-sm font-semibold mb-2 text-gray-300">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 00000-00000"
+                        class="glass bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600">
+                    <span id="phoneError" class="error-text">Please enter a valid phone number.</span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="flex flex-col mb-8">
+                    <label for="message" class="text-sm font-semibold mb-2 text-gray-300">Why Nexus?</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your background and interests..."
+                        class="glass bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-600 resize-none"></textarea>
+                    <span id="messageError" class="error-text">Please include a short message.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                    class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-600/20 flex items-center justify-center space-x-2">
+                    <span>Send Application</span>
+                    <i class="fas fa-paper-plane text-sm"></i>
+                </button>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="successMessage" class="hidden absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 z-10">
+                    <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-check text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Application Sent!</h3>
+                    <p class="text-gray-400 mb-8">Thanks for reaching out. Our team will review your profile and get back to you within 48 hours.</p>
+                    <button type="button" onclick="resetForm()" class="text-blue-400 font-semibold hover:underline">Send another message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Trusted by Pioneers</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="glass p-6 rounded-2xl max-w-sm">
+                    <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">"Nexus has completely transformed how our design studio operates. We save at least 10 hours a week on project coordination."</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-gray-600 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/100?u=1" alt="User">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Sarah Jenkins</p>
+                            <p class="text-xs text-gray-500">CTO, CreativeFlow</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass p-6 rounded-2xl max-w-sm">
+                    <div class="flex items-center space-x-1 text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 italic mb-6">"The neural search is like magic. I can find specific data points across three years of meeting notes in seconds."</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 bg-gray-600 rounded-full overflow-hidden">
+                            <img src="https://i.pravatar.cc/100?u=2" alt="User">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Marcus Chen</p>
+                            <p class="text-xs text-gray-500">Founder, Scale Labs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 border-t border-white/10 pt-16">
+            <div class="col-span-2">
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-layer-group text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">NEXUS</span>
+                </div>
+                <p class="text-gray-500 max-w-xs mb-6">
+                    Building the cognitive infrastructure for the future of work.
+                </p>
+                <div class="flex space-x-4 text-gray-400">
+                    <a href="#" class="hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="font-bold mb-6">Product</h4>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-white">Features</a></li>
+                    <li><a href="#" class="hover:text-white">Security</a></li>
+                    <li><a href="#" class="hover:text-white">Updates</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6">Company</h4>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-white">About</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold mb-6">Legal</h4>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-white">Privacy</a></li>
+                    <li><a href="#" class="hover:text-white">Terms</a></li>
+                    <li><a href="#" class="hover:text-white">DPA</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 text-center text-gray-600 text-xs">
+            &copy; 2024 Nexus AI Inc. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        const form = document.getElementById('nexusForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            
+            // Validation Logic
+            const fields = [
+                { id: 'name', errorId: 'nameError', validator: val => val.trim().length > 2 },
+                { id: 'email', errorId: 'emailError', validator: val => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) },
+                { id: 'phone', errorId: 'phoneError', validator: val => val.trim().length >= 10 },
+                { id: 'message', errorId: 'messageError', validator: val => val.trim().length > 10 }
+            ];
+
+            fields.forEach(field => {
+                const input = document.getElementById(field.id);
+                const error = document.getElementById(field.errorId);
+                
+                if (!field.validator(input.value)) {
+                    input.classList.add('error-border');
+                    error.style.display = 'block';
+                    isValid = false;
+                } else {
+                    input.classList.remove('error-border');
+                    error.style.display = 'none';
+                }
+            });
+
+            if (isValid) {
+                // Simulate API call
+                successMessage.classList.remove('hidden');
+            }
+        });
+
+        function resetForm() {
+            form.reset();
+            successMessage.classList.add('hidden');
+            // Clear any error states
+            ['name', 'email', 'phone', 'message'].forEach(id => {
+                document.getElementById(id).classList.remove('error-border');
+                document.getElementById(id + 'Error').style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
